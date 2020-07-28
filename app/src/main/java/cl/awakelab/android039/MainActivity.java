@@ -2,7 +2,6 @@ package cl.awakelab.android039;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,16 +16,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate [START]");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this, MainActivityCircle.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-        startActivity(intent);
+        Log.d(TAG, "onCreate [END]");
     }
 
     public void btnOperacion(View view) {
+
+        Log.d(TAG, "btnOperacion eventClick [START]");
 
         Button btnOperation = findViewById(R.id.buttonOperation);
         TextView valueA = findViewById(R.id.txtNumberA);
@@ -44,18 +44,20 @@ public class MainActivity extends AppCompatActivity {
 
             message = "Resta : ";
             result = Integer.parseInt(valueA.getText().toString()) - Integer.parseInt(valueB.getText().toString());
-            valueResult.setText(result.toString());
+
         } else if (rbOperation.getCheckedRadioButtonId() == R.id.rbAdd) {
 
             Log.d(TAG, "Suma");
 
             message = "Suma : ";
             result = Integer.parseInt(valueA.getText().toString()) + Integer.parseInt(valueB.getText().toString());
-            valueResult.setText(result.toString());
+
         }
 
+        valueResult.setText(result.toString());
         message += result;
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
 
+        Log.d(TAG, "btnOperacion eventClick [END]");
     }
 }
