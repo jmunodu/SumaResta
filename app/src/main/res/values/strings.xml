@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SumaResta</string>
+    <string name="main_title">Suma / Resta</string>
+    <string name="main_button">Calcular</string>
+    <string name="main_rb_add">Sumar</string>
+    <string name="main_rb_subtract">Restar</string>
+    <string name="txt_hello">Hola a todos</string>
+    <string name="title_activity_hola">Hola</string>
+</resources>
